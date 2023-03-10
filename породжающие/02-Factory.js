@@ -23,7 +23,10 @@ class sweetsFactory {
   }
 }
 
-const candies = new sweetsFactory('candies');
-const chocolate = new sweetsFactory('chocolate');
-console.log(candies);
-console.log(chocolate);
+try {
+  const candies = new sweetsFactory('candies');
+  const chocolate = new sweetsFactory('chocolate');
+  new sweetsFactory('trash');
+} catch (e) {
+  console.error(e);
+}
