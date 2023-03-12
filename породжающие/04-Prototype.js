@@ -1,12 +1,15 @@
 class SweetsProto {
-  constructor(type, weight, measureUnit) {
+  constructor(type, weight, measureUnit, proto) {
+    if (proto) {
+      this._proto = proto;
+    }
     this.type = type;
     this.weight = weight;
     this.measureUnit = measureUnit;
   }
 
   create() {
-    return new SweetsProto(this.type, this.weight, this.measureUnit);
+    return new SweetsProto(this.type, this.weight, this.measureUnit, this);
   }
 }
 
@@ -17,4 +20,5 @@ const candies2 = candiesPrototype.create();
 
 candies1.weight = 2;
 
-console.log(candies1, candies2);
+console.log(candies1);
+console.log(candies2);
